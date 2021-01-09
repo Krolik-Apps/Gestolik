@@ -1,0 +1,842 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background: rgb(150, 150, 150);
+}
+
+.barra-menu{
+    background: rgb(50, 50, 50);
+    color: white;
+}
+
+/* Ícones Redes Sociais */
+.icones{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.icones li{
+    display: inline-block;
+}
+
+.icones li a{
+    margin-right: 10%;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: rgb(50, 50, 50);
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: rgb(50, 50, 50);
+    color: #fff;
+    transition: all 0.2s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: rgb(50, 50, 50);
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover:not(.botao) {
+    /* color: rgb(50, 50, 50); */
+    /* color: black; */
+    /* background: cyan; */
+    color: orangered;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: orangered;
+    /* background: cyan; */
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.items_submenu li a{
+    background-color: rgb(30, 30, 30);
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    /* padding-left: 30px !important; */
+    background: rgb(50, 50, 50);
+}
+
+ul.CTAs {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.article,
+a.article:hover {
+    background: rgb(50, 50, 50) !important;
+    color: cyan !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.1s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+/* CSS IMPORTADO */
+
+.titulo{
+    color: #333;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.caixa-descricao{
+    border: 1px solid black;
+}
+
+.titulo-descricao{
+    color: white;
+    font-size: 1.8em;
+    padding: 0.5%;
+    background-image: linear-gradient(90deg, rgb(50, 50, 50), rgb(200, 200, 200));
+    padding-left: 1%;
+}
+
+.descricao{
+    color: #333;
+    margin-top: 2%;
+    margin-bottom: 10%;
+    text-align: justify;
+}
+
+.separador{
+    border: 1px solid rgb(150, 150, 150);
+    background-color: rgb(150, 150, 150);
+    margin-bottom: 4%;
+}
+
+.separador-sup{
+    border: 1px solid rgb(150, 150, 150);
+    background-color: rgb(150, 150, 150);
+    margin-top: 1%;
+}
+
+.caixa-contactos{
+    margin-top: 5%;;
+    margin-bottom: 10%;
+}
+
+textarea{
+    resize: none;
+}
+
+span{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.obrigatorio{
+    color: red;
+}
+
+.alerta-erro{
+    border: none;
+    color: rgb(230, 155, 162);
+    background-color: rgb(64, 11, 16);
+    border-top-color: rgb(129, 23, 34);
+    border-right-color: rgb(129, 23, 34);
+    border-bottom-color: rgb(129, 23, 34);
+    border-left-color: rgb(129, 23, 34);
+    border-radius: .25rem;
+    padding: 2%;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.alerta-sucesso{
+    border: none;
+    color: rgb(168, 234, 183);
+    background-color: rgb(23, 54, 30);
+    border-top-color: rgb(41, 99, 54);
+    border-right-color: rgb(41, 99, 54);
+    border-bottom-color: rgb(41, 99, 54);
+    border-left-color: rgb(41, 99, 54);
+    border-radius: .25rem;
+    padding: 2%;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.span-campo{
+    font-size: 12px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+form{
+    color: #333;
+}
+
+.label_text{
+    color: #333;
+}
+
+form input[type=text], input[type=password], form input[type=email]{
+    background-color: rgb(150, 150, 150);
+    border-color: #333;
+    color: white;
+}
+
+#mensagem{
+    background-color: rgb(150, 150, 150);
+    border-color: #333;
+    color: white;
+}
+
+#mensagem:focus{
+    background-color: white;
+    border-color: #333;
+    color: #333;
+}
+
+/* Registo */
+.registo{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn_registar{
+    width: 100%;
+}
+
+.alerta_red{
+    padding: .75rem 1.25rem;
+    color: rgb(230, 155, 162);
+    background-color: rgb(64, 11, 16);
+    border-top-color: rgb(129, 23, 34);
+    border-right-color: rgb(129, 23, 34);
+    border-bottom-color: rgb(129, 23, 34);
+    border-left-color: rgb(129, 23, 34);
+}
+
+.alerta_green{
+    padding: .75rem 1.25rem;
+    color: rgb(168, 234, 183);
+    background-color: rgb(23, 54, 30);
+    border-top-color: rgb(41, 99, 54);
+    border-right-color: rgb(41, 99, 54);
+    border-bottom-color: rgb(41, 99, 54);
+    border-left-color: rgb(41, 99, 54);
+}
+
+.alerta_blue{
+    padding: .75rem 1.25rem;
+    color: rgb(156, 230, 243);
+    background-color: rgb(18, 54, 60);
+    border-top-color: rgb(34, 101, 112);
+    border-right-color: rgb(34, 101, 112);
+    border-bottom-color: rgb(34, 101, 112);
+    border-left-color: rgb(34, 101, 112);
+}
+
+/* BOTÕES */
+
+/* Botão Yellow */
+
+.botao_yellow {
+    outline: none;
+    background: linear-gradient(goldenrod, rgb(50, 50, 50));
+    border: 1px solid rgb(30, 30, 30);
+    color: white;
+    padding: 10px 30px 10px 30px;
+}
+
+.botao_yellow:hover{
+    cursor: pointer;
+}
+
+.botao_yellow:active{
+    background: linear-gradient(rgb(50, 50, 50), goldenrod);
+}
+
+/* Botão Green */
+
+.botao_green {
+    outline: none;
+    background: linear-gradient(darkolivegreen, rgb(50, 50, 50));
+    border: 1px solid rgb(30, 30, 30);
+    color: white;
+    padding: 10px 30px 10px 30px;
+}
+
+.botao_green:hover{
+    cursor: pointer;
+}
+
+.botao_green:active{
+    background: linear-gradient(rgb(50, 50, 50), darkolivegreen);
+}
+
+/* Botão Red */
+
+.botao_red {
+    outline: none;
+    background: linear-gradient(firebrick, rgb(50, 50, 50));
+    border: 1px solid rgb(30, 30, 30);
+    color: white;
+    padding: 10px 30px 10px 30px;
+}
+
+.botao_red:hover{
+    cursor: pointer;
+}
+
+.botao_red:active{
+    background: linear-gradient(rgb(50, 50, 50), firebrick);
+}
+
+/* Botão Blue */
+
+.botao_blue {
+    outline: none;
+    background: linear-gradient(royalblue, rgb(50, 50, 50));
+    border: 1px solid rgb(30, 30, 30);
+    color: white;
+    padding: 10px 30px 10px 30px;
+}
+
+.botao_blue:hover{
+    cursor: pointer;
+}
+
+.botao_blue:active{
+    background: linear-gradient(rgb(50, 50, 50), royalblue);
+}
+
+/* FIM DOS BOTÕES */
+
+.btn-menu{
+    border: 1px solid white;
+    color: white;
+}
+
+.btn_botao{
+    border-radius: 5px;
+    background: linear-gradient(darkolivegreen, rgb(50, 50, 50));
+    border: 1px solid rgb(200, 200, 200);
+    color: white;
+    width: 500px;
+    padding: 12px 60px 12px 60px;
+}
+
+.btn_botao:link{
+    color: white;
+}
+
+.btn_botao:visited{
+    color: white;
+}
+
+.btn_botao:hover{
+    border: 1px solid rgb(100, 100, 100);
+    color: white;
+}
+
+.btn_botao:active{
+    color: white;
+}
+
+.btn_membro{
+    border-radius: 5px;
+    background: linear-gradient(goldenrod, rgb(50, 50, 50));
+    border: 1px solid rgb(200, 200, 200);
+    color: white;
+    padding: 15px 100px 15px 100px;
+    margin-bottom: 20px;
+}
+
+.btn_membro:hover{
+    border: 1px solid rgb(100, 100, 100);
+    color: white;
+}
+
+.btn_membro:active{
+    color: white;
+}
+
+.btn_enviar{
+    border-radius: 5px;
+    background: linear-gradient(goldenrod, rgb(50, 50, 50));
+    border: 1px solid rgb(200, 200, 200);
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.btn_enviar:hover{
+    border: 1px solid rgb(100, 100, 100);
+    color: white;
+    cursor: pointer;
+}
+
+.btn_enviar:active{
+    color: white;
+}
+
+.btn_website{
+    border-radius: 5px;
+    background: linear-gradient(goldenrod, rgb(50, 50, 50));
+    border: 1px solid rgb(200, 200, 200);
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.btn_website:hover{
+    border: 1px solid rgb(100, 100, 100);
+    color: white;
+    cursor: pointer;
+}
+
+.btn_website:active{
+    color: white;
+}
+
+/* FIM BOTÕES */
+
+.titulo_portfolio{
+    font-size: 20px;
+    color: black;
+}
+
+/* Krolik App */
+p{
+    font-size: 15px;
+    text-align: center;
+}
+
+.imagem{
+    background: linear-gradient(rgb(200, 200, 200), rgb(150, 150, 150));
+    border: 1px solid gray;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+}
+
+.imagem:hover{
+    background: linear-gradient(rgb(150, 150, 150), rgb(200, 200, 200));
+}
+
+.imagem:active{
+    /* background: linear-gradient(rgb(200, 200, 200), rgb(80, 80, 80)); */
+    /* transform: scale(0.95); */
+    box-shadow: 0px 0px 0px black;
+    background: linear-gradient(rgb(200, 200, 200), rgb(150, 150, 150));
+}
+
+.nome_pagina{
+    font-weight: bold;
+    color: #333;
+}
+
+.imagem{
+    width: 100px;
+}
+
+.separador{
+    border: 1px solid rgb(50, 50, 50);
+}
+
+#data_hora{
+    color: white;
+    font-size: 18px;
+}
+
+/* Formulário dos Ícones */
+#frm_criar_atalho input[type="text"]{
+    border: none;
+    background-color: white;
+    color: #333;
+}
+
+#frm_criar_atalho input[type="file"]:hover{
+    cursor: pointer;
+}
+
+.tabela_notas{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.tabela_notas th{
+    background-color: rgb(30, 30, 30);
+    color: goldenrod;
+}
+
+
+.tabela_notas td:nth-child(1){
+    width: 30%;
+}
+
+.tabela_notas td:nth-child(2){
+    width: 15%;
+}
+
+.tabela_notas td:nth-child(3){
+    width: 15%;
+}
+
+.tabela_notas td:nth-child(4){
+    width: 20%;
+}
+
+.tabela_notas td:nth-child(5){
+    width: 20%;
+}
+
+.frm_menu{
+    background: black;
+    padding: 15px;
+}
+
+.a_ligacao{
+    background: none;
+    border: none;
+    color: white;
+    outline: none !important;
+}
+
+.a_ligacao:hover{
+    cursor: pointer;
+    color: orangered;
+    outline: none !important;
+}
+
+.a_ligacao:active{
+    outline: none !important;
+}
+
+/* Tabela Despesas */
+.tabela_despesas{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.tabela_despesas th{
+    background-color: rgb(30, 30, 30);
+    color: goldenrod;
+}
+
+.tabela_despesas td:nth-child(1){
+    width: 20%;
+}
+
+.tabela_despesas td:nth-child(2){
+    width: 60%;
+}
+
+.tabela_despesas td:nth-child(3){
+    width: 20%;
+}
+
+/* Tabela Balanço Diário */
+.tabela_balanco{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.tabela_balanco th{
+    background-color: rgb(30, 30, 30);
+    color: goldenrod;
+}
+
+.tabela_balanco td:nth-child(1){
+    width: 10%;
+}
+
+.tabela_balanco td:nth-child(2){
+    width: 15%;
+}
+
+.tabela_balanco td:nth-child(3){
+    width: 35%;
+}
+
+.tabela_balanco td:nth-child(4){
+    width: 15%;
+}
+
+.tabela_balanco td:nth-child(5){
+    width: 15%;
+}
+
+.tabela_balanco td:nth-child(6){
+    width: 10%;
+}
+
+/* INPUTS tabela_balanco */
+
+.tabela_balanco_editar input{
+    text-align: center;
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+/* tabela_balanco_editar */
+
+.tabela_balanco_editar{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.tabela_balanco_editar th{
+    background-color: rgb(30, 30, 30);
+    color: goldenrod;
+}
+
+.tabela_balanco_editar td:nth-child(1){
+    width: 10%;
+}
+
+.tabela_balanco_editar td:nth-child(2){
+    width: 15%;
+}
+
+.tabela_balanco_editar td:nth-child(3){
+    width: 35%;
+}
+
+.tabela_balanco_editar td:nth-child(4){
+    width: 15%;
+}
+
+.tabela_balanco_editar td:nth-child(5){
+    width: 15%;
+}
+
+.tabela_balanco_editar td:nth-child(6){
+    width: 10%;
+}
+
+/* FIM INPUTStabela_balanco */
+
+.item_nao_editavel{
+    text-align: center;
+    background-color: rgb(30, 30, 30); 
+    border: none; 
+    color: white;
+}
+
+.item_editavel{
+    text-align: center;
+    background-color: white; 
+    color: rgb(30, 30, 30);
+}
+
+/* Tabela Balanço Pesquisar */
+
+.tabela_balanco_pesquisar{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.tabela_balanco_pesquisar th{
+    background-color: rgb(30, 30, 30);
+    color: goldenrod;
+}
+
+.tabela_balanco_pesquisar td:nth-child(1){
+    width: 20%;
+}
+
+.tabela_balanco_pesquisar td:nth-child(2){
+    width: 60%;
+}
+
+.tabela_balanco_pesquisar td:nth-child(3){
+    width: 20%;
+}
+
+/* Tabela Fecho de Contas */
+
+/* Items Balanço */
+.tabela_fecho_de_contas_balanco{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.tabela_fecho_de_contas_balanco th{
+    background-color: rgb(30, 30, 30);
+    color: goldenrod;
+}
+
+.tabela_fecho_de_contas_balanco td:nth-child(1){
+    border-top: none !important;
+    width: 10%;
+}
+
+.tabela_fecho_de_contas_balanco td:nth-child(2){
+    width: 20%;
+}
+
+.tabela_fecho_de_contas_balanco td:nth-child(3){
+    width: 35%;
+}
+
+.tabela_fecho_de_contas_balanco td:nth-child(4){
+    width: 15%;
+}
+
+.tabela_fecho_de_contas_balanco td:nth-child(5){
+    width: 20%;
+}
+
+/* Tabela Fecho de Contas últimas linhas */
+
+.tabela_fecho_de_contas{
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.tabela_fecho_de_contas th{
+    background-color: rgb(30, 30, 30);
+    color: goldenrod;
+}
+
+.tabela_fecho_de_contas td:nth-child(1){
+    width: 20%;
+}
+
+.tabela_fecho_de_contas td:nth-child(2){
+    width: 20%;
+}
+
+.tabela_fecho_de_contas td:nth-child(3){
+    width: 40%;
+}
+
+.tabela_fecho_de_contas td:nth-child(4){
+    width: 20%;
+}
