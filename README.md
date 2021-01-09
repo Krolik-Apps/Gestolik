@@ -1,5 +1,5 @@
 Nome da Aplicação: Gestolik <br>
-Version: 1.0.0 <br>
+Versão: 1.0.0 <br>
 Linguagens Usadas: HTML, CSS, Javascript, PHP <br>
 Framework: CodeIgniter <br>
 Plataforma: WEB <br>
