@@ -18,5 +18,5 @@ Descrição: Aplicação Web para gerenciar gastos financeiros <br>
 <br>
 \- No ficheiro /application/config/database.php, definir o hostname, o "username" (da base de dados), "password" (da base de dados), e "database" (nome da base de dados);<br>
 <br>
-Para mais informações veja a documentação em: <a href="https://raw.githubusercontent.com/Krolik-Apps/Gestolik/main/documentacao.txt" target="_blank">Documentação Gestolik</a><br>
+Para mais informações veja a documentação em: <a href="https://raw.githubusercontent.com/Krolik-Apps/Gestolik/main/documentacao.txt" onclick="return ! window.open(this.href);">Documentação Gestolik</a><br>
 ou contacte info@krolik.pt
