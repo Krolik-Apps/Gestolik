@@ -9,8 +9,8 @@ Descrição: Aplicação Web para gerenciar gastos financeiros <br>
 // ============================================================================= <br>
 // INSTALAÇÃO <br>
 // ============================================================================= <br>
-
-- Copiar os ficheiros para dentro do seu servidor; <br>
+<br>
+\- Copiar os ficheiros para dentro do seu servidor; <br>
 <br>
 - Criar uma base de dados vazia e importar o ficheiro .sql dentro da pasta BASE DE DADOS que se encontra na raíz da aplicação; <br>
 <br>
