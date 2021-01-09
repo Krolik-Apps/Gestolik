@@ -1,3 +1,59 @@
 // =============================================================================
-// INSTALAÇÃO
+// Outras Informações
 // =============================================================================
+AVISO: Todos os valores que tenham casas decimais, têm de ser separados por ponto e não por vírgula, exemplo: 10.50€
+
+// =============================================================================
+// Abrir Balanço
+// =============================================================================
+- Antes de começar a fazer o balanço é necessário abrir um balanço.
+- Escolha a data de abertura e clique em "Abrir Balanço".
+
+// =============================================================================
+// Despesas
+// =============================================================================
+- Adicione o nome das despesas que vai usar quando estiver a fazer o balanço.
+
+AVISO: Caso edite o nome da despesa, o nome irá ser alterado em toda a base de dados, ou seja, em balanço actuais e balanços já feitos.
+
+// =============================================================================
+// Receitas
+// =============================================================================
+- Adicione o nome das receitas que vai usar quando estiver a fazer o balanço.
+
+AVISO: Caso edite o nome da receita, o nome irá ser alterado em toda a base de dados, ou seja, em balanço actuais e balanços já feitos.
+
+// =============================================================================
+// Balanço
+// =============================================================================
+- Para começar a criar o seu balanço, escolha a data da despesa/receita e o valor e clique em "Adicionar".
+
+- Vai ser adicionada a linha abaixo com as informações que submeteu, caso queira apagar basta clicar no ícone vermelho na linha que quer apagar.
+
+- Há medida que faz o balanço, na barra superior, o saldo irá dar a diferença entre o valor das despesas e receitas.
+
+- Quando quiser fechar o balanço basta colocar a data de fecho e clicar em "Fechar Balanço".
+
+NOTA: Ao fechar o balanço o saldo irá automáticamente para 0€.
+
+// =============================================================================
+// Ver Balanços
+// =============================================================================
+- Caso queira aceder a um balanço que já tenha feito, basta seleccionar a data de abertura e data de fecho do balanço e clicar em "Pesquisar".
+
+- Tem também as opções de editar o balanço, onde poderá adicionar ou alterar linhas que já estejam no balanço, para isso basta alterar o valor da linha 
+desejada e clicar no ícone da disquete para gravar as alterações, ou no ícone vermelho para apagar a linha.
+
+- Poderá também imprimir, ou eliminar o balanço.
+
+// =============================================================================
+// Balanço Anual
+// =============================================================================
+- No balanço anual, seleccione o ano desejado, e clique em "Pesquisar".
+
+- Irá ser mostrado o valor total de cada despesa e de cada receita ao longo desse ano e o lucro (Balanço Total).
+
+// =============================================================================
+// Saldo
+// =============================================================================
+- Caso queira começar um balanço com um valor predefinido, coloque o valor desejado antes de começar a criar um novo balanço.

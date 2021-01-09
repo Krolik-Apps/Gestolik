@@ -32,7 +32,7 @@
                     <a href="<?php echo site_url('gestor/saldo'); ?>">Saldo</a>
                 </li>    
                 <li>
-                    <a href="https://raw.githubusercontent.com/KrolikPT/Gestolik/main/documentacao.txt" target="_blank" style="color: cyan;">Documentação</a>
+                    <a href="https://raw.githubusercontent.com/Krolik-Apps/Gestolik/main/documentacao.txt" target="_blank" style="color: cyan;">Documentação</a>
                 </li>  
             </ul>
         </nav>
