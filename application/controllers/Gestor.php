@@ -22,7 +22,7 @@
                 "mensagem"      => ""
 			];
 
-			$valor_saldo = $this->input->post('valor_saldo');
+			$valor_saldo = htmlspecialchars($this->input->post('valor_saldo'));
 
 			if($valor_saldo == "")
 			{
@@ -60,7 +60,7 @@
                 "mensagem"      => ""
 			];
 			
-			$nome = $this->input->post("nome_despesa");
+			$nome = htmlspecialchars($this->input->post("nome_despesa"));
 
 			if($nome == "")
 			{
@@ -131,7 +131,7 @@
 		// Apagar Despesa
 		public function apagar_despesa()
 		{
-			$nome = $_GET['n'];
+			$nome = htmlspecialchars($_GET['n']);
 
 			$query_despesas = $this->db->query('DELETE FROM despesas WHERE nome = ?', $nome);
 
@@ -155,7 +155,7 @@
 		// Apagar Despesa
 		public function apagar_receita()
 		{
-			$nome = $_GET['n'];
+			$nome = htmlspecialchars($_GET['n']);
 
 			$query_receitas = $this->db->query('DELETE FROM receitas WHERE nome = ?', $nome);
 
@@ -183,21 +183,21 @@
                 "mensagem"      => ""
 			];
 
-			$nome_antigo = $_GET['n'];
+			$nome_antigo = htmlspecialchars($_GET['n']);
 
-			$this->db->set('nome', $this->input->post('nome_despesa'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_despesa')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('despesas');
 			
-			$this->db->set('nome', $this->input->post('nome_despesa'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_despesa')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('balanco');
 
-			$this->db->set('nome', $this->input->post('nome_despesa'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_despesa')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('fecho_de_contas');
 
-			$this->db->set('nome', $this->input->post('nome_despesa'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_despesa')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('totalizadores');
 
@@ -215,7 +215,7 @@
 
 		public function editar_despesa()
 		{
-			$nome_despesa = $_GET['n'];
+			$nome_despesa = htmlspecialchars($_GET['n']);
 
 			// Carregar Despesas
 			$this->db->from('despesas');
@@ -234,21 +234,21 @@
                 "mensagem"      => ""
 			];
 
-			$nome_antigo = $_GET['n'];
+			$nome_antigo = htmlspecialchars($_GET['n']);
 
-			$this->db->set('nome', $this->input->post('nome_receita'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_receita')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('receitas');
 			
-			$this->db->set('nome', $this->input->post('nome_receita'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_receita')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('balanco');
 
-			$this->db->set('nome', $this->input->post('nome_receita'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_receita')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('fecho_de_contas');
 
-			$this->db->set('nome', $this->input->post('nome_receita'));
+			$this->db->set('nome', htmlspecialchars($this->input->post('nome_receita')));
             $this->db->where('nome', $nome_antigo);
 			$this->db->update('totalizadores');
 
@@ -266,7 +266,7 @@
 
 		public function editar_receita()
 		{
-			$nome_receita = $_GET['n'];
+			$nome_receita = htmlspecialchars($_GET['n']);
 
 			// Carregar Despesas
 			$this->db->from('receitas');
@@ -329,7 +329,7 @@
 			{
 				date_default_timezone_set('Europe/London'); 
 				// $data_abertura = date("d-m-Y", strtotime($this->input->post('data_abertura')));
-				$data_abertura = $this->input->post('data_abertura');
+				$data_abertura = htmlspecialchars($this->input->post('data_abertura'));
 
 				$this->db->set('conta_aberta', 1);
 				$this->db->set('data_abertura', $data_abertura);
@@ -349,7 +349,7 @@
 
 		public function adicionarCredito()
 		{
-			$valor_credito = $this->input->post('valor_credito');
+			$valor_credito = htmlspecialchars($this->input->post('valor_credito'));
 
 			if($valor_credito == "")
 			{
@@ -409,7 +409,7 @@
                 "mensagem"      => ""
 			];
 			
-			$nome = $this->input->post("nome_receita");
+			$nome = htmlspecialchars($this->input->post("nome_receita"));
 
 			if($nome == "")
 			{

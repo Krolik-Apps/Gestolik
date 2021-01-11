@@ -67,15 +67,15 @@
 				return;
 			}
 
-			$data = $this->input->post('data');
+			$data = htmlspecialchars($this->input->post('data'));
 			// $data_formatada = date("d-m-Y", strtotime($this->input->post('data_despesa')));
-			$data_formatada = $this->input->post('data_despesa');
+			$data_formatada = htmlspecialchars($this->input->post('data_despesa'));
 
 			$dados = [
 				"data" 						=> $data_formatada,
-				"nome" 						=> $this->input->post('combo_despesa'),
+				"nome" 						=> htmlspecialchars($this->input->post('combo_despesa')),
 				"tipo" 						=> "Débito",
-				"valor"						=> $this->input->post('valor_despesa')
+				"valor"						=> htmlspecialchars($this->input->post('valor_despesa'))
 			];
 
 			if($dados['data'] == "")
@@ -170,7 +170,7 @@
 				"id_receita"			=> null,
 				"data_abertura"			=> $gestor[0]["data_abertura"],
 				"data"					=> $data_formatada,
-				"nome"					=> $this->input->post('combo_despesa'),
+				"nome"					=> htmlspecialchars($this->input->post('combo_despesa')),
 				"valor"					=> $dados["valor"],
 				"tipo"					=> "Débito"
 			];
@@ -182,7 +182,7 @@
 			$gestor = $this->db->get()->result_array();
 
 			//Subtrai ao saldo
-			$this->db->set('saldo', 'saldo - '.$this->input->post('valor_despesa'), FALSE);
+			$this->db->set('saldo', 'saldo - '.htmlspecialchars($this->input->post('valor_despesa')), FALSE);
 			$this->db->update('saldo');
 
 			$this->balanco();
@@ -214,15 +214,15 @@
 				return;
 			}
 
-			$data = $this->input->post('data');
+			$data = htmlspecialchars($this->input->post('data'));
 			// $data_formatada = date("d-m-Y", strtotime($this->input->post('data_receita')));
-			$data_formatada = $this->input->post('data_receita');
+			$data_formatada = htmlspecialchars($this->input->post('data_receita'));
 
 			$dados = [
 				"data" 						=> $data_formatada,
-				"nome" 						=> $this->input->post('combo_receita'),
+				"nome" 						=> htmlspecialchars($this->input->post('combo_receita')),
 				"tipo" 						=> "Crédito",
-				"valor"						=> $this->input->post('valor_receita')
+				"valor"						=> htmlspecialchars($this->input->post('valor_receita'))
 			];
 
 			if($dados['data'] == "")
@@ -317,7 +317,7 @@
 				"id_receita"			=> $balanco[0]['id_balanco'],
 				"data_abertura"			=> $gestor[0]["data_abertura"],
 				"data"					=> $data_formatada,
-				"nome"					=> $this->input->post('combo_receita'),
+				"nome"					=> htmlspecialchars($this->input->post('combo_receita')),
 				"valor"					=> $dados["valor"],
 				"tipo"					=> "Crédito"
 			];
@@ -329,7 +329,7 @@
 			$gestor = $this->db->get()->result_array();
 
 			//Soma ao saldo
-			$this->db->set('saldo', 'saldo + '.$this->input->post('valor_receita'), FALSE);
+			$this->db->set('saldo', 'saldo + '.htmlspecialchars($this->input->post('valor_receita')), FALSE);
 			$this->db->update('saldo');
 
 			$this->balanco();
@@ -338,16 +338,16 @@
 		public function acrescentar_despesa_editar()
 		{
 			// Vai buscar a data do balanço
-			$data_abertura = $this->input->post('data_abertura');
-			$data_fecho = $this->input->post('data_fecho');
-			$data_registo = $this->input->post('data_despesa');
+			$data_abertura = htmlspecialchars($this->input->post('data_abertura'));
+			$data_fecho = htmlspecialchars($this->input->post('data_fecho'));
+			$data_registo = htmlspecialchars($this->input->post('data_despesa'));
 
 			$dados = [
 				"data_abertura" 						=> $data_abertura,
 				"data" 									=> $data_registo,
 				"data_fecho" 							=> $data_fecho,
-				"nome"									=> $this->input->post('combo_despesa'),
-				"valor_despesa"							=> $this->input->post('valor_despesa'),
+				"nome"									=> htmlspecialchars($this->input->post('combo_despesa')),
+				"valor_despesa"							=> htmlspecialchars($this->input->post('valor_despesa')),
 				"valor_receita"							=> null,
 				"tipo"									=> "Débito"
 			]; 
@@ -399,17 +399,17 @@
 		public function acrescentar_receita_editar()
 		{
 			// Vai buscar a data do balanço
-			$data_abertura = $this->input->post('data_abertura');
-			$data_fecho = $this->input->post('data_fecho');
-			$data_registo = $this->input->post('data_receita');
+			$data_abertura = htmlspecialchars($this->input->post('data_abertura'));
+			$data_fecho = htmlspecialchars($this->input->post('data_fecho'));
+			$data_registo = htmlspecialchars($this->input->post('data_receita'));
 
 			$dados = [
 				"data_abertura" 						=> $data_abertura,
 				"data" 									=> $data_registo,
 				"data_fecho" 							=> $data_fecho,
-				"nome"									=> $this->input->post('combo_receita'),
+				"nome"									=> htmlspecialchars($this->input->post('combo_receita')),
 				"valor_despesa"							=> null,
-				"valor_receita"							=> $this->input->post('valor_receita'),
+				"valor_receita"							=> htmlspecialchars($this->input->post('valor_receita')),
 				"tipo"									=> "Crédito"
 			]; 
 
@@ -459,7 +459,7 @@
 
 		public function apagar_linha()
 		{
-			$id_balanco = $_GET['id'];
+			$id_balanco = htmlspecialchars($_GET['id']);
 			$data = $_GET['d'];
 			$nome = $_GET['n'];
 			$valor = $_GET['v'];
@@ -498,11 +498,11 @@
 		public function apagar_editar()
 		{
 			$id_fecho = [
-				"id_fecho"		=>		$_GET['id']
+				"id_fecho"		=>		htmlspecialchars($_GET['id'])
 			];
 
-			$data_abertura = $_GET['da'];
-			$data_fecho = $_GET['df'];
+			$data_abertura = htmlspecialchars($_GET['da']);
+			$data_fecho = htmlspecialchars($_GET['df']);
 
 			$query_apagar = $this->db->query('DELETE FROM fecho_de_contas WHERE id_fecho = ?', $id_fecho);
 
@@ -522,7 +522,7 @@
 
 			date_default_timezone_set('Europe/London'); 
 			// $data_fecho = date("d-m-Y", strtotime($this->input->post('data_fecho')));
-			$data_fecho = $this->input->post('data_fecho');
+			$data_fecho = htmlspecialchars($this->input->post('data_fecho'));
 
 			$datas = [
 				"data_abertura"			=> "",
@@ -617,7 +617,7 @@
 
 		public function pesquisar()
 		{
-			$data_completa = explode(" / ", $this->input->post('combo_data_balanco'));
+			$data_completa = explode(" / ", htmlspecialchars($this->input->post('combo_data_balanco')));
 			$data_abertura = (isset($data_completa[0])) ? $data_completa[0] : redirect('balancos');
 			$data_fecho = (isset($data_completa[1])) ? $data_completa[1] : redirect('balancos');
 
@@ -654,8 +654,8 @@
 		public function eliminar()
 		{
 			$datas = [
-				"data_abertura"			=> $_GET['da'].'%',
-				"data_fecho"			=> $_GET['df'].'%'
+				"data_abertura"			=> htmlspecialchars($_GET['da']).'%',
+				"data_fecho"			=> htmlspecialchars($_GET['df']).'%'
 			];
 
 			$query_apagar = $this->db->query('DELETE FROM fecho_de_contas WHERE data_abertura LIKE ? AND data_fecho LIKE ?', $datas);
@@ -690,12 +690,12 @@
 
 			// echo 'Data de Abertura: '.$data_abertura.'<br>Data de Fecho: '.$data_fecho;
 
-			$data_abertura = explode('-', $_GET['da']);
+			$data_abertura = explode('-', htmlspecialchars($_GET['da']));
 			$ano_abertura = $data_abertura[0];
 			$mes_abertura = $data_abertura[1];
 			$dia_abertura = $data_abertura[2];
 
-			$data_fecho = explode('-', $_GET['df']);
+			$data_fecho = explode('-', htmlspecialchars($_GET['df']));
 			$ano_fecho = $data_fecho[0];
 			$mes_fecho = $data_fecho[1];
 			$dia_fecho = $data_fecho[2];
@@ -707,8 +707,8 @@
 			$receitas["receitas"] = $this->db->get()->result_array();
 
 			$this->db->from('fecho_de_contas');
-			$this->db->where('data_abertura >=', $_GET['da']);
-			$this->db->where('data_fecho <=', $_GET['df']);
+			$this->db->where('data_abertura >=', htmlspecialchars($_GET['da']));
+			$this->db->where('data_fecho <=', htmlspecialchars($_GET['df']));
 			$fecho_de_contas["fecho_de_contas"] = $this->db->get()->result_array();		
 
 			$this->db->from('gestor');
@@ -725,14 +725,14 @@
 
 		public function gravar_linha()
 		{
-			$id_fecho = $_GET['id'];
-			$data_abertura = $_GET['da'];
-			$data_fecho = $_GET['df'];
-			$data = $_POST['data_item']; 
+			$id_fecho = htmlspecialchars($_GET['id']);
+			$data_abertura = htmlspecialchars($_GET['da']);
+			$data_fecho = htmlspecialchars($_GET['df']);
+			$data = htmlspecialchars($_POST['data_item']); 
 			$data_formatada = date("Y-m-d", strtotime($data));
-			$nome = $_POST['nome_item'];
-			$tipo = $_POST['tipo_item'];
-			$valor = $_POST['valor_item'];
+			$nome = htmlspecialchars($_POST['nome_item']);
+			$tipo = htmlspecialchars($_POST['tipo_item']);
+			$valor = htmlspecialchars($_POST['valor_item']);
 			
 			if($tipo == "Débito")
 			{
@@ -748,10 +748,10 @@
 
 		public function guardar_balanco()
 		{
-			$abertura_antiga = $_GET['da'];
-			$fecho_antigo = $_GET['df'];
-			$data_abertura = $this->input->post('data_abertura');
-			$data_fecho = $this->input->post('data_fecho');
+			$abertura_antiga = htmlspecialchars($_GET['da']);
+			$fecho_antigo = htmlspecialchars($_GET['df']);
+			$data_abertura = htmlspecialchars($this->input->post('data_abertura'));
+			$data_fecho = htmlspecialchars($this->input->post('data_fecho'));
 
 			$this->db->set('data_abertura', $data_abertura);
 			$this->db->set('data_fecho', $data_fecho);
@@ -798,7 +798,7 @@
 
 		public function pesquisa_anual()
 		{
-			$ano = $this->input->post('combo_data_balanco_anual');
+			$ano = htmlspecialchars($this->input->post('combo_data_balanco_anual'));
 
 			$ano_balanco['ano_balanco'] = $ano;
 
